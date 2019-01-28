@@ -21,7 +21,7 @@ The key targets of this system are: to be reliable (avoid false positives), real
 
 ## Embedded code architecture
 
-[Language: Python]
+**[Language: Python]**
 
 The code that runs on the Raspberry is built using the Python SDK and it has 2 main tasks that need to be performed:
 
@@ -35,7 +35,7 @@ The Cloud API will count all the HTTP calls received on that specific endpoint (
 
 ## IOS app architecture
 
-[Language: Swift]
+**[Language: Swift]**
 
 The iOS app will need to be linked to a topic in APNS that will be used to receive push-notifications from the API.
 
@@ -49,7 +49,7 @@ It will consists from multiple screens that will be able to provide the followin
 
 ## API architecture
 
-[Language: Go]
+**[Language: Go]**
 
 The API will be a Go REST API application that will run on a GCloud VM using a public endpoint that accepts connections only for an whitelisted IP (the IP of the network where the Raspberry is located).
 
