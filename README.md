@@ -17,7 +17,7 @@ The key targets of this system are: to be reliable (avoid false positives), real
 
 ## Architecture
 
-
+![alt text](Images/DoorWatcherArchitecture.png "Architecture")
 
 ## Embedded code
 
