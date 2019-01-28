@@ -25,13 +25,13 @@ The key targets of this system are: to be reliable (avoid false positives), real
 
 The code that runs on the Raspberry is built using the Python SDK and it has 2 main tasks that need to be performed:
 
-1. It reads the door sensor's state once per second and if the door is opened, then it makes a set (more than one) of HTTP calls to the Cloud API (for redundancy reasons) announcing that the door has been opened. We perform multiple calls to make sure that the message reached the destination successfully and it wasn't lost by network congestions or any other infrastructure-related issues.
+* It reads the door sensor's state once per second and if the door is opened, then it makes a set (more than one) of HTTP calls to the Cloud API (for redundancy reasons) announcing that the door has been opened. We perform multiple calls to make sure that the message reached the destination successfully and it wasn't lost by network congestions or any other infrastructure-related issues.
 
 The Cloud API will count all the HTTP calls received on that specific endpoint (/door-opened for example) and if the number of received calls is over 50% / 75% from the total number of calls that were performed by the Raspberry, then the API triggers a notification to the iOS app.
 
-2. At a 5 seconds interval, the Raspberry performs a HTTP call to a dedicated enpoint (/heartbeat) in the Cloud API for redundancy reasons. This way, the API knows in each moment if the hardware is still there and it works as expected. This heartbeat signal will be stored on the API and the iOS app will consume it.
+* At a 5 seconds interval, the Raspberry performs a HTTP call to a dedicated enpoint (/heartbeat) in the Cloud API for redundancy reasons. This way, the API knows in each moment if the hardware is still there and it works as expected. This heartbeat signal will be stored on the API and the iOS app will consume it.
 
-3. [Extra] Send the video stream from an USB camera connected to the raspberry to the API.
+* [Extra] Send the video stream from an USB camera connected to the raspberry to the API.
 
 ## IOS app architecture
 
